@@ -1,1 +1,74 @@
+AWS LEMP STACK IMPLEMENTATION
 
+I started with opening Git Bash and ran the following command to connect to my server
+<img width="533" alt="lemp 1" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/4c9ae6fc-672f-421f-8e54-04f128a7965f">
+<img width="662" alt="lemp 2" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/9319c80d-f2ea-4955-a9f1-1691d45b1bf9">
+
+Next was to install Nginx by running the command as seen in the picture.
+<img width="953" alt="lemp 3" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/7534093b-4b4c-4377-ac6f-8ef0aa9e89b1">
+
+I verified my  nginx installation by running sudo systemctl status nginx as seen below;
+<img width="718" alt="lemp 4" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/3516008e-74ba-451e-936c-f08eab9c5c1a">
+
+At this point after my verification, i ran my public IP on a browser to test how my installed nginx server will respond to request from the internet
+<img width="619" alt="lemp 5" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/e19c59f4-559a-4d3d-a842-484f763709ad">
+
+I installed mysql to be able to store and manage data for my site
+<img width="935" alt="lemp 6" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/d8d55498-55fd-4450-a9b3-e99ba54fd3f7">
+
+Log into the mysql by running the sudo mysql command; This command will connect to mysql server as an administrative database user 'root'. 
+it is recommended that you run a security script that comes pre-installed with mysql.
+<img width="545" alt="lemp 7" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/04630a7f-0b17-44b3-b01d-e4ece2ece1b6">
+
+Next is to run 'sudo mysql_secure_installation' which is to configure my validate password plugins. answer yes to the prompt questions and type in a strong 
+password for mysql root user. When you are done, test if you are able to log into mysql console by running sudo mysql -p as seen below. to exit mysql console,
+type mysql> exit
+
+<img width="553" alt="lemp 8" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/0dd7b7ce-e768-4898-838c-7a711f5b095f">
+
+Install php by running the command as seen in the image
+<img width="865" alt="lemp 9" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/e182307a-31f8-4d87-9e07-dc630e60af1f">
+
+Yayyyy. Its time to configure nginx using php processor. We start by creating the root web directory. Next assign ownership of the directory
+with the $USER environment variable. Then open a new configuration file in nginx sites-availbale. See corresponding commands in the image below;
+<img width="520" alt="lemp 10" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/84195a7f-0ba4-4735-8c90-35078e7ccb4a">
+
+Type in the following bare bone configurations in the blank page that will appear after the nano command  
+<img width="435" alt="lemp 11" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/08941a86-dd6b-44ff-ba0f-85aa44fbd370">
+
+Activate your configuration by linking to the config file from the nginx sites-enabled
+<img width="587" alt="lemp 12" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/822ec1c2-25b0-492d-a3da-c7d2ee173f57">
+
+Test for syntax errors by running sudo nginx -t command. Disable default nginx host that is currently configured to listen on port 80, 
+and then afterwards reload nginxs to apply changes. Next is to creat an index.html file in that location so that we can test that the new server works. 
+Please check all the commands in the below image corresponding to my explanations;
+<img width="952" alt="lemp 13" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/78326620-2962-49d5-b011-09b5b4afdcdf">
+
+Now go to your browser and run your public IP and watch the new created index.html file show.
+<img width="615" alt="lemp 14" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/f3d9663b-a32e-4bb4-acc8-fa5fdd8ae947">
+
+Now its time to test php with nginx. use the command nano /var/www/projectLEMP/info.php  In the new file, type in a valid php code that will return 
+info about your server. the valid code is 
+<?php
+phpinfo();
+After this, on your broswer, run your pulic IP /info.php and get this below page
+<img width="864" alt="lemp 15" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/f6417337-8dde-46b2-8830-ef813b6d8fe3">
+
+The next is the retrieve data from mysql database with php. firstly connect to mysql console with sudo mysql -p and create a new database.
+Now you create a new user and password and grant him full priveleges on the database. Next is to confirm if the new user has the proper permission by logging into
+the mysql console again, this time, using the customer credentials. This can be acheived by running mysql -u example_user -p  
+Again by running the command mysql> SHOW DATABASES it'll show the output in the image
+<img width="465" alt="lemp 16" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/11455d19-6edb-4acd-b9c4-3e927a24e3b7">
+
+
+Next, create a test table following the commands in this image. when you confirm that you have valid data in your test table, you can exit mysql console by 
+mysql> exit 
+
+<img width="497" alt="lemp 17" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/15c7d5b8-a0e2-434a-913a-b374ea9ec17c">
+
+Use your preferred editor to create a php file in your custom web root directory nano /var/www/projectLEMP/todo_list.php  
+Type in the following content as seen in this image below. Save and exit.
+<img width="481" alt="lemp 18" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/cf51b47c-00e2-4f93-aad7-aec79dc779b1">
+
+run you public IP /todo_list.php in your browser and this page showing the content of your to do list should come up.
+<img width="325" alt="lemp 19" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/8ed4bfe8-6ea1-4f70-bcb6-f0aa837a8143">
