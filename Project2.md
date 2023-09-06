@@ -10,7 +10,7 @@ Next was to install Nginx by running the command as seen in the picture.
 I verified my  nginx installation by running sudo systemctl status nginx as seen below;
 <img width="718" alt="lemp 4" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/3516008e-74ba-451e-936c-f08eab9c5c1a">
 
-At this point after my verification, i ran my public IP on a browser to test how my installed nginx server will respond to request from the internet
+At this point after my verification, i ran my public IP on a browser to test how my installed nginx server will respond to request from internet 
 <img width="619" alt="lemp 5" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/e19c59f4-559a-4d3d-a842-484f763709ad">
 
 I installed mysql to be able to store and manage data for my site
