@@ -56,19 +56,19 @@ After this, on your broswer, run your pulic IP /info.php and get this below page
 
 The next is the retrieve data from mysql database with php. firstly connect to mysql console with sudo mysql -p and create a new database.
 Now you create a new user and password and grant him full priveleges on the database. Next is to confirm if the new user has the proper permission by logging into
-the mysql console again, this time, using the customer credentials. This can be acheived by running mysql -u example_user -p  
+the mysql console again,this time, using the customer credentials. This can be acheived by running mysql -u example_user -p  
 Again by running the command mysql> SHOW DATABASES it'll show the output in the image
 <img width="465" alt="lemp 16" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/11455d19-6edb-4acd-b9c4-3e927a24e3b7">
 
 
-Next, create a test table following the commands in this image. when you confirm that you have valid data in your test table, you can exit mysql console by 
-mysql> exit 
-
+Next, create a test table following the commands in this image. when you confirm that you have valid data in your test table, you can exit mysql console by mysql> exit 
 <img width="497" alt="lemp 17" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/15c7d5b8-a0e2-434a-913a-b374ea9ec17c">
+
+
 
 Use your preferred editor to create a php file in your custom web root directory nano /var/www/projectLEMP/todo_list.php  
 Type in the following content as seen in this image below. Save and exit.
 <img width="481" alt="lemp 18" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/cf51b47c-00e2-4f93-aad7-aec79dc779b1">
 
-run you public IP /todo_list.php in your browser and this page showing the content of your to do list should come up.
+Run your public IP /todo_list.php in your browser and this page showing the content of your to do list should come up.
 <img width="325" alt="lemp 19" src="https://github.com/kelechionah/darey.io.pbl/assets/140612288/8ed4bfe8-6ea1-4f70-bcb6-f0aa837a8143">
