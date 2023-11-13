@@ -1,4 +1,4 @@
-ANISIBLE-AUTOMATE PROJECT
+ANSIBLE-AUTOMATE PROJECT
 
 In this project, we will develop 'Ansible' scripts to stimulate the use of a 'Jump box/Bastion host' to acess our Web Servers. 
 
